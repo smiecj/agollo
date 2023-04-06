@@ -25,13 +25,13 @@ import (
 	"testing"
 	"time"
 
-	"github.com/apolloconfig/agollo/v4/cluster/roundrobin"
-	"github.com/apolloconfig/agollo/v4/env"
-	"github.com/apolloconfig/agollo/v4/env/config"
-	jsonFile "github.com/apolloconfig/agollo/v4/env/file/json"
-	"github.com/apolloconfig/agollo/v4/env/server"
-	"github.com/apolloconfig/agollo/v4/extension"
-	http2 "github.com/apolloconfig/agollo/v4/protocol/http"
+	"github.com/smiecj/agollo/v4/cluster/roundrobin"
+	"github.com/smiecj/agollo/v4/env"
+	"github.com/smiecj/agollo/v4/env/config"
+	jsonFile "github.com/smiecj/agollo/v4/env/file/json"
+	"github.com/smiecj/agollo/v4/env/server"
+	"github.com/smiecj/agollo/v4/extension"
+	http2 "github.com/smiecj/agollo/v4/protocol/http"
 	. "github.com/tevid/gohamcrest"
 )
 
@@ -146,7 +146,7 @@ func initMockNotifyAndConfigServerWithTwoErrResponse() *httptest.Server {
 	return runMockConfigServer(handlerMap, onlynormaltworesponse)
 }
 
-//run mock config server
+// run mock config server
 func runMockConfigServer(handlerMap map[string]func(http.ResponseWriter, *http.Request),
 	notifyHandler func(http.ResponseWriter, *http.Request)) *httptest.Server {
 	appConfig := env.InitFileConfig()
@@ -177,8 +177,8 @@ func initNotifications() *config.AppConfig {
 	return appConfig
 }
 
-//Error response
-//will hold 5s and keep response 404
+// Error response
+// will hold 5s and keep response 404
 func runErrorResponse() *httptest.Server {
 	ts := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusNotFound)

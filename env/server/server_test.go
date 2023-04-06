@@ -21,7 +21,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/apolloconfig/agollo/v4/env/config"
+	"github.com/smiecj/agollo/v4/env/config"
 	. "github.com/tevid/gohamcrest"
 )
 

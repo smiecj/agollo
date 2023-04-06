@@ -24,15 +24,15 @@ import (
 	"testing"
 	"time"
 
-	"github.com/apolloconfig/agollo/v4/constant"
-	"github.com/apolloconfig/agollo/v4/env"
-	"github.com/apolloconfig/agollo/v4/env/config"
-	"github.com/apolloconfig/agollo/v4/env/server"
-	"github.com/apolloconfig/agollo/v4/extension"
-	"github.com/apolloconfig/agollo/v4/utils/parse/normal"
-	"github.com/apolloconfig/agollo/v4/utils/parse/properties"
-	"github.com/apolloconfig/agollo/v4/utils/parse/yaml"
-	"github.com/apolloconfig/agollo/v4/utils/parse/yml"
+	"github.com/smiecj/agollo/v4/constant"
+	"github.com/smiecj/agollo/v4/env"
+	"github.com/smiecj/agollo/v4/env/config"
+	"github.com/smiecj/agollo/v4/env/server"
+	"github.com/smiecj/agollo/v4/extension"
+	"github.com/smiecj/agollo/v4/utils/parse/normal"
+	"github.com/smiecj/agollo/v4/utils/parse/properties"
+	"github.com/smiecj/agollo/v4/utils/parse/yaml"
+	"github.com/smiecj/agollo/v4/utils/parse/yml"
 	. "github.com/tevid/gohamcrest"
 )
 
@@ -53,10 +53,10 @@ func init() {
 	extension.AddFormatParser(constant.YAML, &yaml.Parser{})
 }
 
-//Normal response
-//First request will hold 5s and response http.StatusNotModified
-//Second request will hold 5s and response http.StatusNotModified
-//Second request will response [{"namespaceName":"application","notificationId":3}]
+// Normal response
+// First request will hold 5s and response http.StatusNotModified
+// Second request will hold 5s and response http.StatusNotModified
+// Second request will response [{"namespaceName":"application","notificationId":3}]
 func runNormalConfigResponse() *httptest.Server {
 	ts := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		normalConfigCount++
@@ -80,8 +80,8 @@ func runNormalConfigResponse() *httptest.Server {
 	return ts
 }
 
-//Error response
-//will hold 5s and keep response 404
+// Error response
+// will hold 5s and keep response 404
 func runErrorConfigResponse() *httptest.Server {
 	ts := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		time.Sleep(500 * time.Microsecond)

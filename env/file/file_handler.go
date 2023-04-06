@@ -18,10 +18,10 @@
 package file
 
 import (
-	"github.com/apolloconfig/agollo/v4/env/config"
+	"github.com/smiecj/agollo/v4/env/config"
 )
 
-//FileHandler 备份文件读写
+// FileHandler 备份文件读写
 type FileHandler interface {
 	WriteConfigFile(config *config.ApolloConfig, configPath string) error
 	GetConfigFile(configDir string, appID string, namespace string) string

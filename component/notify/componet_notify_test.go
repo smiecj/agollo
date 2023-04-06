@@ -21,14 +21,14 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/apolloconfig/agollo/v4/cluster/roundrobin"
-	_ "github.com/apolloconfig/agollo/v4/cluster/roundrobin"
-	"github.com/apolloconfig/agollo/v4/env"
-	"github.com/apolloconfig/agollo/v4/env/config"
-	jsonConfig "github.com/apolloconfig/agollo/v4/env/config/json"
-	_ "github.com/apolloconfig/agollo/v4/env/file/json"
-	jsonFile "github.com/apolloconfig/agollo/v4/env/file/json"
-	"github.com/apolloconfig/agollo/v4/extension"
+	"github.com/smiecj/agollo/v4/cluster/roundrobin"
+	_ "github.com/smiecj/agollo/v4/cluster/roundrobin"
+	"github.com/smiecj/agollo/v4/env"
+	"github.com/smiecj/agollo/v4/env/config"
+	jsonConfig "github.com/smiecj/agollo/v4/env/config/json"
+	_ "github.com/smiecj/agollo/v4/env/file/json"
+	jsonFile "github.com/smiecj/agollo/v4/env/file/json"
+	"github.com/smiecj/agollo/v4/extension"
 	. "github.com/tevid/gohamcrest"
 )
 
