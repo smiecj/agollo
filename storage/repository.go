@@ -64,6 +64,20 @@ func (c *Cache) GetConfig(namespace string) *Config {
 	return config.(*Config)
 }
 
+// for different namespace
+/* func (c *Cache) StoreApolloConfig(namespace string, apolloConfig *config.ApolloConfig) {
+	if namespace == "" {
+		return
+	}
+
+	newConfig := initConfig(namespace, extension.GetCacheFactory())
+	for key, value := range apolloConfig.Configurations {
+		newConfig.cache.Set(key, value, configCacheExpireTime)
+	}
+
+	c.apolloConfigCache.Store(namespace, newConfig)
+} */
+
 // CreateNamespaceConfig 根据namespace初始化agollo内容配置
 func CreateNamespaceConfig(namespace string) *Cache {
 	// config from apollo
